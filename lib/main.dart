@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue),
               useMaterial3: true,
             ),
-            home: HomePage(title: "Demo Bloc Cubit")));
+            home: const HomePage(title: "Demo Bloc")));
   }
 }
 
