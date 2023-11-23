@@ -1,10 +1,18 @@
-import 'package:demo_flutter/cubits/counter/counter_bloc.dart';
-import 'package:demo_flutter/cubits/counter/counter_event.dart';
-import 'package:demo_flutter/cubits/counter/counter_state.dart';
+import 'package:demo_flutter/bloc/counter/counter_bloc.dart';
+import 'package:demo_flutter/bloc/counter/counter_event.dart';
+import 'package:demo_flutter/bloc/counter/counter_state.dart';
+import 'package:demo_flutter/cubit/counter/counter_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+void main() async {
+  final counter = CounterCubit();
+  counter.stream.listen((event) {
+    print("ini adalah stream state $event");
+  });
+  await Future.delayed(const Duration(seconds: 2));
+  counter.increament();
+  print("state value:" + counter.state.toString());
   runApp(const MyApp());
 }
 
