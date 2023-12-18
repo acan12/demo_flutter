@@ -6,13 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async {
-  final counter = CounterCubit();
+  final counter = CounterCubit(0);
   counter.stream.listen((event) {
     print("ini adalah stream state $event");
   });
   await Future.delayed(const Duration(seconds: 2));
   counter.increament();
-  print("state value:" + counter.state.toString());
+  print("state value:${counter.state}");
   runApp(const MyApp());
 }
 
@@ -59,15 +59,15 @@ class HomePage extends StatelessWidget {
             children: [
               FloatingActionButton(
                 onPressed: () {
-                  context.read<CounterBloc>().add(CounterIncreamentEvent());
+                  context.read<CounterBloc>().add(CounterDecreamentEvent());
                 },
-                child: const Icon(Icons.add),
+                child: const Icon(Icons.remove),
               ),
               FloatingActionButton(
                   onPressed: () {
-                    context.read<CounterBloc>().add(CounterDecreamentEvent());
+                    context.read<CounterBloc>().add(CounterIncreamentEvent());
                   },
-                  child: const Icon(Icons.remove))
+                  child: const Icon(Icons.add))
             ],
           )
         ],
