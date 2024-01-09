@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DailyNews extends StatelessWidget {
-  const DailyNews({Key? key}): super(key: key)
+  const DailyNews({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       appBar: _buildAppBar(),
-      body: ,
+      body: _buildBody(),
     );
   }
 
@@ -20,7 +20,7 @@ class DailyNews extends StatelessWidget {
       title: const Text(
         'Daily News',
         style: TextStyle(
-          color: Colors.black
+            color: Colors.black
         ),
       ),
     );
@@ -29,15 +29,20 @@ class DailyNews extends StatelessWidget {
   _buildBody() {
     return BlocBuilder<ArticleBloc, ArticleState>(
       builder: (_, state) {
-        if(state is ArticleLoading) {
+        if (state is ArticleLoading) {
           return const Center(child: CupertinoActivityIndicator());
         }
-        if(state is ArticleError) {
+        if (state is ArticleError) {
           return const Center(child: Icon(Icons.refresh));
         }
-        if(state is ArticleDone) {
-          return ListView.builder(itemBuilder: itemBuilder);
+        if (state is ArticleDone) {
+          return ListView.builder(itemBuilder: (context, index) {
+            return ListTile(
+              title: Text('$index'),
+            );
+          }, itemCount: state.articles!.length,);
         }
+        return const SizedBox();
       },
     );
   }

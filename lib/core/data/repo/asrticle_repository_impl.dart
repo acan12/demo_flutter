@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:demo_flutter/core/data/data_sources/model/article.dart';
 import 'package:demo_flutter/core/data/data_sources/remote/news_api_service.dart';
-import 'package:demo_flutter/core/domain/entities/article.dart';
 import 'package:demo_flutter/core/domain/repo/article/article_repository.dart';
 import 'package:demo_flutter/core/util/network/data_state.dart';
 
