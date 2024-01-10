@@ -12,5 +12,4 @@ class GetArticleUseCase implements BaseUseCase<DataState<List<ArticleEntity>>, v
   Future<DataState<List<ArticleEntity>>> call({void params}) {
     return _articleRepository.getNewsArticles();
   }
-  
 }
