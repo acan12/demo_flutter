@@ -1,5 +1,6 @@
 import 'package:demo_flutter/core/ui/bloc/article/article_bloc.dart';
 import 'package:demo_flutter/core/ui/bloc/article/article_state.dart';
+import 'package:demo_flutter/core/ui/widgets/article_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -37,8 +38,9 @@ class DailyNews extends StatelessWidget {
         }
         if (state is ArticleDone) {
           return ListView.builder(itemBuilder: (context, index) {
-            return ListTile(
-              title: Text('$index'),
+            return ArticleWidget(
+              article: state.articles![index] ,
+              // onArticlePressed: (article) => _onArticlePressed(context,article),
             );
           }, itemCount: state.articles!.length,);
         }
