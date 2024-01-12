@@ -1,5 +1,6 @@
 import 'package:demo_flutter/core/ui/bloc/article/article_bloc.dart';
 import 'package:demo_flutter/core/ui/bloc/article/article_state.dart';
+import 'package:demo_flutter/core/ui/widgets/article_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
