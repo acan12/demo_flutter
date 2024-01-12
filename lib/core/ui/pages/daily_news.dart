@@ -10,19 +10,26 @@ class DailyNews extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppBar(),
+      appBar: _buildAppBar(context),
       body: _buildBody(),
     );
   }
 
-  _buildAppBar() {
+  _buildAppBar(BuildContext context) {
     return AppBar(
       title: const Text(
         'Daily News',
-        style: TextStyle(
-            color: Colors.black
-        ),
+        style: TextStyle(color: Colors.black),
       ),
+      actions: [
+        GestureDetector(
+          onTap: () => _onShowSavedArticlesViewTapped(context),
+          child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 14),
+              child: Icon(Icons.bookmark, color: Colors.black,),
+          ),
+        )
+      ],
     );
   }
 
@@ -36,14 +43,21 @@ class DailyNews extends StatelessWidget {
           return const Center(child: Icon(Icons.refresh));
         }
         if (state is ArticleDone) {
-          return ListView.builder(itemBuilder: (context, index) {
-            return ListTile(
-              title: Text('$index'),
-            );
-          }, itemCount: state.articles!.length,);
+          return ListView.builder(
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text('$index'),
+              );
+            },
+            itemCount: state.articles!.length,
+          );
         }
         return const SizedBox();
       },
     );
+  }
+
+  void _onShowSavedArticlesViewTapped(BuildContext context) {
+    Navigator.pushNamed(context, '/SavedArticle');
   }
 }

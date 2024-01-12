@@ -7,6 +7,7 @@ class CounterCubit extends Cubit<int> {
 
   @override
   void onChange(Change<int> change) {
+    super.onChange(change);
     print("ini perubahan state = $change");
   }
 }
