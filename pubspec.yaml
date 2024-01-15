@@ -21,6 +21,7 @@ dependencies:
   flutter_hooks: ^0.18.3
   cached_network_image: ^3.3.0
   retrofit: ^4.0.3
+#  chucker_flutter: ^1.6.2
 
 dev_dependencies:
   flutter_test:
