@@ -44,14 +44,12 @@ class DailyNews extends StatelessWidget {
           return const Center(child: Icon(Icons.refresh));
         }
         if (state is ArticleDone) {
-          return ListView.builder(
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Text('$index'),
-              );
-            },
-            itemCount: state.articles!.length,
-          );
+          return ListView.builder(itemBuilder: (context, index) {
+            return ArticleWidget(
+              article: state.articles![index] ,
+              // onArticlePressed: (article) => _onArticlePressed(context,article),
+            );
+          }, itemCount: state.articles!.length,);
         }
         return const SizedBox();
       },
