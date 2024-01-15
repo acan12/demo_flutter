@@ -1,4 +1,4 @@
-import 'package:demo_flutter/core/domain/entities/article.dart';
+import 'package:demo_flutter/core/domain/entities/article_entity.dart';
 import 'package:equatable/equatable.dart';
 import 'package:dio/dio.dart';
 

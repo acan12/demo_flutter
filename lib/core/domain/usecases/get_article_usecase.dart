@@ -1,4 +1,4 @@
-import 'package:demo_flutter/core/domain/entities/article.dart';
+import 'package:demo_flutter/core/domain/entities/article_entity.dart';
 import 'package:demo_flutter/core/domain/repo/article/article_repository.dart';
 import 'package:demo_flutter/core/domain/usecases/base_usecase.dart';
 import 'package:demo_flutter/core/util/network/data_state.dart';
