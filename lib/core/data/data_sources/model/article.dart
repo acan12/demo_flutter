@@ -1,4 +1,4 @@
-import 'package:demo_flutter/core/domain/entities/article.dart';
+import 'package:demo_flutter/core/domain/entities/article_entity.dart';
 
 class Article extends ArticleEntity {
   const Article({
@@ -10,7 +10,16 @@ class Article extends ArticleEntity {
     String ? urlToImage,
     String ? publishedAt,
     String ? content,
-  });
+  }): super(
+    id: id,
+    author: author,
+    title: title,
+    description: description,
+    url: url,
+    urlToImage: urlToImage,
+    publishedAt: publishedAt,
+    content: content,
+  );
 
   factory Article.fromJson(Map<String, dynamic> map){
     return Article(
