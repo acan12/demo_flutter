@@ -7,7 +7,7 @@ import 'package:dio/dio.dart';
 part 'news_api_service.g.dart';
 
 
-@RestApi(baseUrl: newsApiBaseUrl)
+@RestApi()
 abstract class NewsApiService {
   factory NewsApiService(Dio dio) = _NewsApiService;
 

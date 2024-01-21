@@ -1,3 +1,5 @@
+
+import 'package:chucker_flutter/chucker_flutter.dart';
 import 'package:demo_flutter/core/injection.dart';
 import 'package:demo_flutter/core/ui/bloc/article/article_bloc.dart';
 import 'package:demo_flutter/core/ui/bloc/article/article_event.dart';
@@ -22,6 +24,7 @@ class DemoApp extends StatelessWidget {
       create: (context) => sl()..add(const GetArticles()),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        navigatorObservers: [ChuckerFlutter.navigatorObserver],
         theme: theme(),
         home: const DailyNews(),
       ),
