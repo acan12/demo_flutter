@@ -1,11 +1,9 @@
-import 'package:demo_flutter/core/config.dart';
 import 'package:demo_flutter/core/data/data_sources/model/article.dart';
 import 'package:retrofit/dio.dart';
 import 'package:retrofit/http.dart';
 import 'package:dio/dio.dart';
 
 part 'news_api_service.g.dart';
-
 
 @RestApi()
 abstract class NewsApiService {
