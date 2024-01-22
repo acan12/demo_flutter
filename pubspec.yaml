@@ -22,10 +22,6 @@ dependencies:
   cached_network_image: ^3.3.0
   retrofit: ^4.0.3
   dio: ^5.0.0
-
-#  flutter_alice: ^1.0.1
-
-#  alice: ^0.4.1
   chucker_flutter: ^1.6.2
 
 dev_dependencies:
