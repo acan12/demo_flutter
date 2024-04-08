@@ -8,7 +8,7 @@ class CounterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Counter App"),),
+      appBar: AppBar(title: const Text("Demo Counter App"),),
       body: Center(
         child: BlocBuilder<CounterCubit, int>(
           builder: (context, state) {
