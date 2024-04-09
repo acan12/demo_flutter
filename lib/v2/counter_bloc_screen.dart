@@ -1,18 +1,20 @@
-import 'package:demo_flutter/v2/cubit/counter_cubit.dart';
+import 'package:demo_flutter/v2/bloc/counter_bloc.dart';
+import 'package:demo_flutter/v2/bloc/counter_event.dart';
+import 'package:demo_flutter/v2/bloc/counter_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CounterScreen extends StatelessWidget {
-  const CounterScreen({super.key});
+class CounterBlocScreen extends StatelessWidget {
+  const CounterBlocScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Demo Counter App"),),
+      appBar: AppBar(title: const Text("Demo Counter Bloc"),),
       body: Center(
-        child: BlocBuilder<CounterCubit, int>(
+        child: BlocBuilder<CounterBloc, CounterState>(
           builder: (context, state) {
-            return Text(state.toString(),
+            return Text(state.counterValue.toString(),
               style: const TextStyle(fontSize: 50, fontWeight: FontWeight.bold),);
           },
         ),
@@ -21,11 +23,11 @@ class CounterScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           FloatingActionButton(onPressed: () {
-            context.read<CounterCubit>().increment();
+            context.read<CounterBloc>().add(IncreamentEvent());
           },
             child: const Icon(Icons.add),),
           FloatingActionButton(onPressed: () {
-            context.read<CounterCubit>().decrement();
+            context.read<CounterBloc>().add(DecreamentEvent());
           },
             child: const Icon(Icons.remove),)
         ],
