@@ -1,8 +1,7 @@
-import 'package:demo_flutter/v2/cubit/counter_cubit.dart';
+import 'package:demo_flutter/v2/bloc/freezed/counter_freezed_bloc.dart';
+import 'package:demo_flutter/v2/counter_freezed_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'v2/counter_cubit_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,13 +16,13 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => CounterCubit(),
+          create: (context) => CounterFreezedBloc(),
         )
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        home: CounterCubitScreen(),
+        home: CounterFreezedScreen(),
       ),
     );
   }
