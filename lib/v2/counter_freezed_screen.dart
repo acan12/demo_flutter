@@ -16,7 +16,7 @@ class CounterFreezedScreen extends StatelessWidget {
           builder: (context, state) {
             return Text(
               state
-                  .when(initial: () => '-', running: (number) => '$number')
+                  .when(initial: (defValue) => '$defValue', running: (number) => '$number')
                   .toString(),
               style: const TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
             );
